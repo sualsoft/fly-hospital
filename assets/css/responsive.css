@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+# Extra small devices
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .red {
+    background-color: var(--red-color);
+    padding: 6px 12px;
+    margin: 0px;
+    border-radius: 1000px;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  .red a {
+    background-color: transparent !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header img {
+    width: 150px;
+  }
+  .red a {
+    background-color: var(--red-color);
+    padding: 6px 12px;
+    border-radius: 1000px;
+    transition: all 0.3s;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .header .right {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .header .top {
+    justify-content: center;
+  }
+}
+/*--------------------------------------------------------------
+# small Devices
+--------------------------------------------------------------*/
+
+@media only screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Medium devices
+--------------------------------------------------------------*/
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  .header img {
+    max-width: 200px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Large devices
+--------------------------------------------------------------*/
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/*--------------------------------------------------------------
+# x-large devices
+--------------------------------------------------------------*/
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/*--------------------------------------------------------------
+# xx-large devices
+--------------------------------------------------------------*/
+@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
