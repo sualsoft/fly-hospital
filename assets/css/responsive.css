@@ -22,6 +22,56 @@
     margin: 0px !important;
     font-size: 14px;
   }
+  .header img {
+    width: 150px;
+  }
+  .hero .input-1 {
+    width: 100%;
+  }
+  .hero form button {
+    width: 100%;
+  }
+  .hero form {
+    flex-direction: column;
+  }
+  .why .col-4 {
+    width: 50% !important;
+  }
+  .contact .column {
+    flex-direction: column-reverse;
+  }
+  .contact .col-5 {
+    width: 60%;
+  }
+  .contact .col-7 {
+    width: 100%;
+  }
+  .contact .img img {
+    padding-top: 2rem;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .contact::before {
+    height: 60px;
+  }
+  .contact form {
+    padding-bottom: 40px;
+  }
+  .contact .title {
+    padding-top: 0px;
+  }
+
+  .contact-us form {
+    margin: 0rem;
+    padding: 0.5rem 1rem;
+    width: 90%;
+  }
+  .footer::before {
+    height: 40px;
+  }
+  .footer .col-3 {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -41,9 +91,93 @@
     justify-content: center !important;
     align-items: center !important;
   }
-  .header .top {
-    justify-content: center;
+  .hero {
+    text-align: center;
   }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero h2 {
+    font-size: 24px;
+  }
+  .section-header p {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .header img {
+    width: 150px;
+  }
+  .app {
+    display: none;
+  }
+  .hero .text {
+    flex-direction: column-reverse;
+  }
+  .hero .hero-img img {
+    width: 150%;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .why .box {
+    padding: 4px 6px;
+    margin: 0.5rem;
+    min-height: 200px;
+  }
+  .why .box .text {
+    font-size: 16px;
+  }
+  .why .box .icon img {
+    width: 40px;
+  }
+  .contact .row {
+    padding-bottom: 20px;
+  }
+  .contact::before {
+    height: 60px;
+  }
+  .contact .title {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    height: auto;
+    padding: 200px 0 60px 0;
+  }
+  .contact form .form-control {
+    width: 80%;
+  }
+  .contact form [type="email"] {
+    width: 70%;
+  }
+  .contact form textarea {
+    width: 93%;
+  }
+  .contact .title {
+    font-size: 32px;
+  }
+  .contact-us .new-width {
+    width: 100%;
+  }
+  .contact-us form {
+    width: 90%;
+  }
+}
+@media (max-width: 1200px) {
+  .contact form .form-control {
+    width: 85%;
+  }
+  .contact form [type="email"] {
+    width: 85%;
+  }
+  .contact form textarea {
+    width: 93%;
+  }
+}
+
+@media (max-width: 1400px) {
 }
 /*--------------------------------------------------------------
 # small Devices
@@ -55,6 +189,25 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .header img {
+    width: 150px;
+  }
+  .hero {
+    min-height: 10vh;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero .input-1 {
+    width: 100%;
+  }
+  .hero form button {
+    width: 100%;
+  }
+  .hero form {
+    flex-direction: column;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -64,8 +217,21 @@
   .container {
     max-width: 720px;
   }
-  .header img {
-    max-width: 200px;
+  .header .img {
+    width: 260px;
+  }
+
+  .hero .input-1 {
+    width: 35%;
+  }
+  .hero form button {
+    width: 30%;
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero form {
+    flex-direction: row;
   }
 }
 
@@ -76,6 +242,18 @@
   .container {
     max-width: 960px;
   }
+  .header .img {
+    padding-left: 60px;
+  }
+  .hero .input-1 {
+    width: 40%;
+  }
+  .hero form button {
+    width: 20%;
+  }
+  .hero h1 {
+    font-size: 60px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -85,6 +263,10 @@
   .container {
     max-width: 1140px;
   }
+  .header .img {
+    width: 350px;
+    padding-left: 60px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -93,5 +275,8 @@
 @media only screen and (min-width: 1400px) {
   .container {
     max-width: 1320px;
+  }
+  .header .img {
+    padding-left: 120px;
   }
 }

@@ -181,7 +181,6 @@ h6 {
 --------------------------------------------------------------*/
 
 .header {
-  background-color: #fff;
   width: 100%;
   z-index: 999;
 }
@@ -208,7 +207,6 @@ h6 {
   width: 100%;
   margin-top: 40px;
   background-color: #fff;
-  border-top: var(--ash-color) 1px solid;
   z-index: 999;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
 }
@@ -216,7 +214,7 @@ h6 {
   padding: 1rem 2rem;
 }
 .header img {
-  max-width: 250px;
+  width: 350px;
 }
 .header .toggle img {
   width: 30px;
@@ -292,12 +290,7 @@ section {
 .section-header h2 span {
   color: var(--red-color);
 }
-@media (max-width: 768px) {
-  .section-header p {
-    font-size: 28px;
-    line-height: 32px;
-  }
-}
+
 /*--------------------------------------------------------------
 # Index Page
 --------------------------------------------------------------*/
@@ -305,7 +298,7 @@ section {
 * Hero Section 
 */
 .hero {
-  padding-top: 150px;
+  padding-top: 200px;
   width: 100%;
   min-height: 50vh;
   background: var(--main-green-color);
@@ -329,23 +322,7 @@ section {
 .hero .hero-img img {
   width: 100%;
 }
-.hero .btn-get-started span {
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-.hero .btn-get-started i {
-  margin-left: 5px;
-  font-size: 18px;
-  transition: 0.3s;
-}
-.hero .btn-get-started:hover i {
-  transform: translateX(5px);
-}
-.hero .hero-img {
-  text-align: right;
-}
+
 .hero form {
   gap: 12px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -432,38 +409,6 @@ section {
 .hero form button[type="submit"]:hover {
   background: var(--main-green-color);
 }
-@media (min-width: 1024px) {
-  .hero {
-    background-attachment: fixed;
-  }
-}
-@media (max-width: 991px) {
-  .hero {
-    height: auto;
-    padding: 120px 0 60px 0;
-  }
-  .hero .hero-img {
-    text-align: center;
-    margin-top: 80px;
-  }
-  .hero .hero-img img {
-    width: 80%;
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 32px;
-  }
-  .hero h2 {
-    font-size: 24px;
-  }
-  .hero .hero-img img {
-    width: 100%;
-  }
-}
 
 /**
 * Treatment Carousel Section
@@ -530,13 +475,22 @@ section {
   font-size: 24px;
   text-align: center;
 }
-
+.section-header h2 {
+  font-size: 28px;
+}
 /**
 * Map section
 */
 
 .map {
   background-color: #aee9c5;
+  max-height: 100vh;
+}
+.map img {
+  width: 100%;
+}
+.table img {
+  width: 100%;
 }
 
 /**
@@ -596,64 +550,6 @@ section {
   color: #085a27;
   font-weight: 700;
   font-size: 48px;
-}
-
-/**
-*Footer
-**/
-.footer {
-  background-color: #022a11;
-}
-.footer::before {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 100%;
-  background-image: url(/assets/images/footer-vawe.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #ecfaf1;
-  margin-top: -100px;
-  z-index: 999;
-}
-.footer img {
-  margin-top: 100px;
-  width: 100%;
-}
-
-.footer ul {
-  list-style-type: none;
-  margin: 0px;
-  margin-top: 100px;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer ul li {
-  padding-left: 2rem;
-}
-.footer ul li:first-child {
-  padding-bottom: 1rem;
-  font-weight: 700;
-}
-.footer ul li a {
-  color: #fff;
-  transition: all 0.3s ease;
-}
-.footer ul li a:hover {
-  color: var(--main-green-color);
-}
-
-.footer .copyright {
-  margin-top: 3rem;
-  border-top: 1px solid #ffffff;
-}
-.footer .copyright p {
-  text-align: center;
-  color: #fff;
-  font-size: 12px;
 }
 
 /*--------------------------------------------------------------
@@ -960,4 +856,120 @@ hero
 
 .search-results ul li a:hover {
   color: #114f1f;
+}
+/*--------------------------------------------------------------
+# Contact pages
+--------------------------------------------------------------*/
+.contact {
+  margin-top: 5rem;
+  background-color: #ecfaf1;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  height: 160px;
+  width: 100%;
+  background-image: url(/assets/images/wave.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+.contact form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  padding: 0rem 2.5rem;
+}
+.contact form .form-control {
+  width: 90%;
+  padding: 12px;
+  margin-top: 12px;
+}
+.contact form [type="email"] {
+  width: 90%;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.contact form textarea {
+  width: 95%;
+  padding: 12px;
+  margin-top: 12px;
+  height: 80px;
+}
+
+.contact form input,
+.contact form textarea {
+  border-radius: 4px;
+  border: 1px solid #114f1f;
+}
+
+.contact .img img {
+  width: 100%;
+}
+.contact .title {
+  padding-left: 2.5rem;
+  color: #085a27;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+/*--------------------------------------------------------------
+# Footer pages
+--------------------------------------------------------------*/
+
+.footer {
+  background-color: #022a11;
+  z-index: -1;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 100%;
+  background-image: url(/assets/images/footer-vawe.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #ecfaf1;
+  margin-top: -100px;
+}
+.footer img {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin: 0px;
+  margin-top: 100px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer ul li {
+  padding-left: 2rem;
+}
+.footer ul li:first-child {
+  padding-bottom: 1rem;
+  font-weight: 700;
+}
+.footer ul li a {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.footer ul li a:hover {
+  color: var(--main-green-color);
+}
+
+.footer .copyright {
+  margin-top: 3rem;
+  border-top: 1px solid #ffffff;
+}
+.footer .copyright p {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
 }
