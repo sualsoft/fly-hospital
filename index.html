@@ -48,7 +48,7 @@
   </head>
   <body>
     <!-- ======= Header section ======= -->
-    <header class="header">
+    <header id="header" class="header">
       <div class="top fixed-top">
         <p>Toll Free Number <a href="callto:1800-876149">1800-876149</a></p>
       </div>
@@ -93,6 +93,23 @@
           <div class="col-9">
             <h1>The Ultimate <span>Hospital Discovery</span> Platform</h1>
             <h2>Find Medical Centers globally to help you succeed</h2>
+
+            <div class="app-icon d-flex">
+              <ul>
+                <li>
+                  <a href="/">
+                    <img src="/assets/images/apple.png" alt="Download Our App"
+                  /></a>
+                </li>
+                <li>
+                  <a href="/"
+                    ><img
+                      src="/assets/images/android.png"
+                      alt="Download Our app"
+                  /></a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col-3">
             <div class="hero-img">
@@ -240,7 +257,7 @@
             </div>
           </div>
 
-          <div class="col-4">
+          <div class="col-4 d-sm-none">
             <div class="box">
               <div class="icon">
                 <img
@@ -301,8 +318,10 @@
             every year for Healthcare
           </h2>
         </header>
-        <div class="img">
-          <img src="/assets/images/map.png" alt="Map" />
+        <div class="content">
+          <div class="img">
+            <img src="/assets/images/map.png" alt="Map" />
+          </div>
         </div>
       </div>
     </section>
@@ -380,6 +399,14 @@
     </div>
     <!-- End Contact form -->
 
+    <!-- ======= Support Button ======= -->
+    <div class="support-btn">
+      <div class="support">
+        <a href="/"><i class="bi bi-headset"></i></a>
+      </div>
+    </div>
+    <!-- End Support Button -->
+
     <!-- ======= Footer Section ======= -->
     <section class="footer">
       <div class="container">
@@ -427,6 +454,19 @@
       </div>
     </section>
     <!-- End Footer Section -->
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var header = document.getElementById("header");
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+      });
+    </script>
 
     <script src="/assets/js/main.js"></script>
   </body>

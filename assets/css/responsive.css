@@ -22,8 +22,11 @@
     margin: 0px !important;
     font-size: 14px;
   }
-  .header img {
-    width: 150px;
+  .header .img {
+    width: 200px;
+  }
+  .header .top {
+    justify-content: center;
   }
   .hero .input-1 {
     width: 100%;
@@ -60,11 +63,28 @@
   .contact .title {
     padding-top: 0px;
   }
+  .contact-us .mobile .col-6 {
+    width: 100%;
+  }
 
   .contact-us form {
     margin: 0rem;
     padding: 0.5rem 1rem;
     width: 90%;
+  }
+  .d-sm-none,
+  .header .red {
+    display: none;
+  }
+  .treatment .logo {
+    width: 40px;
+    margin-right: 5px;
+  }
+  .tiles .col-4 {
+    width: 100%;
+  }
+  .support-btn {
+    display: flex;
   }
   .footer::before {
     height: 40px;
@@ -76,7 +96,7 @@
 
 @media only screen and (max-width: 768px) {
   .header img {
-    width: 150px;
+    width: 200px;
   }
   .red a {
     background-color: var(--red-color);
@@ -139,6 +159,12 @@
   .contact .title {
     padding-top: 60px;
   }
+  .tiles .col-4 {
+    width: 100% !important;
+  }
+  .tiles .wrapper {
+    margin: 0px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -189,9 +215,6 @@
     margin-right: auto;
     margin-left: auto;
   }
-  .header img {
-    width: 150px;
-  }
   .hero {
     min-height: 10vh;
   }
@@ -217,9 +240,6 @@
   .container {
     max-width: 720px;
   }
-  .header .img {
-    width: 260px;
-  }
 
   .hero .input-1 {
     width: 35%;
@@ -242,9 +262,6 @@
   .container {
     max-width: 960px;
   }
-  .header .img {
-    padding-left: 60px;
-  }
   .hero .input-1 {
     width: 40%;
   }
@@ -263,10 +280,6 @@
   .container {
     max-width: 1140px;
   }
-  .header .img {
-    width: 350px;
-    padding-left: 60px;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -275,8 +288,5 @@
 @media only screen and (min-width: 1400px) {
   .container {
     max-width: 1320px;
-  }
-  .header .img {
-    padding-left: 120px;
   }
 }

@@ -209,6 +209,7 @@ h6 {
   background-color: #fff;
   z-index: 999;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.6s;
 }
 .header .navigation .nav-bar {
   padding: 1rem 2rem;
@@ -264,6 +265,9 @@ h6 {
   font-size: 24px;
   color: var(--red-color);
   cursor: pointer;
+}
+.header-scrolled .navigation {
+  display: none;
 }
 /*--------------------------------------------------------------
 # Sections
@@ -375,6 +379,16 @@ section {
   padding: 0px;
 }
 
+.hero .app-icon ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px;
+}
+
+.hero .app-icon ul li img {
+  width: 90%;
+}
 .hero form button[type="submit"] {
   background: var(--yello-color);
   border: 0;
@@ -386,11 +400,11 @@ section {
   cursor: pointer;
 }
 .app {
-  position: absolute;
+  position: fixed;
   right: -69px;
   top: 30%;
   transform: rotate(-90deg);
-  z-index: 0;
+  z-index: 99;
 }
 .app a {
   display: flex;
@@ -427,8 +441,7 @@ section {
 }
 
 .treatment .logo {
-  width: 100px;
-  height: 100px;
+  width: 70px;
   margin-right: 10px;
 }
 .treatment .nav-btn {
@@ -462,17 +475,21 @@ section {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  padding: 3rem 2rem;
-  margin: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
   border-radius: 8px;
   box-shadow: 5px 5px 20px 5px rgba(64, 204, 118, 0.1);
+  min-height: 130px;
 }
 .why .box:hover {
   box-shadow: 5px 5px 20px 5px rgba(64, 204, 118, 0.2);
 }
+.why .icon img {
+  width: 40px;
+}
 .why .box .text {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
 }
 .section-header h2 {
@@ -484,10 +501,16 @@ section {
 
 .map {
   background-color: #aee9c5;
-  max-height: 100vh;
+  max-height: 70vh;
+}
+.map .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 .map img {
-  width: 100%;
+  width: 80%;
 }
 .table img {
   width: 100%;
@@ -837,25 +860,74 @@ hero
 }
 
 /*--------------------------------------------------------------
-# Result pages
+# Destinations pages
 --------------------------------------------------------------*/
-.search-results .section-header h2 {
-  text-align: start;
+.tiles .wrapper {
+  margin: 0.5rem;
+}
+.tiles .card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 300px;
+  margin: 1rem;
+}
+.tiles .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+  transition: 0.5s all;
+  opacity: 0;
 }
 
-.search-results ul {
-  list-style: none;
+.tiles .card:hover:before {
+  opacity: 1;
+}
+.tiles .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.tiles .info {
+  position: relative;
+  z-index: 3 !important;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  padding-bottom: 1rem;
 }
-
-.search-results ul li a {
-  text-decoration: underline;
+.tiles .info p {
+  color: #fff;
+  text-align: center;
 }
-
-.search-results ul li a:hover {
-  color: #114f1f;
+.tiles .info a {
+  background-color: var(--main-green-color);
+  color: #fff;
+  text-align: center;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.tiles .info a:hover {
+  background-color: var(--yello-color);
+  color: #000;
 }
 /*--------------------------------------------------------------
 # Contact pages
@@ -914,7 +986,23 @@ hero
   font-weight: 700;
   font-size: 48px;
 }
-
+/*--------------------------------------------------------------
+# Support btn
+--------------------------------------------------------------*/
+.support-btn {
+  position: fixed;
+  display: none;
+  z-index: 9999;
+  bottom: 60px;
+  right: 10px;
+}
+.support-btn a {
+  background-color: var(--red-color);
+  color: #fff;
+  font-size: 32px;
+  padding: 8px 10px;
+  border-radius: 100%;
+}
 /*--------------------------------------------------------------
 # Footer pages
 --------------------------------------------------------------*/
