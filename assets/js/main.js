@@ -1,29 +1,30 @@
+//Navigation Bar
 document.addEventListener("DOMContentLoaded", function () {
-  var toggleButtons = document.querySelectorAll(".toggle");
-  toggleButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      var sidebar = document.querySelector(".sidebar");
-      if (sidebar.classList.contains("display-none")) {
-        sidebar.classList.remove("display-none");
-      } else {
-        sidebar.classList.add("display");
-      }
-    });
+  // Toggle sidebar visibility when the toggle button is clicked
+  var toggleButton = document.getElementById("toggle");
+  toggleButton.addEventListener("click", function () {
+    var sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("visible");
+  });
+
+  // Remove sidebar visibility when the close icon is clicked
+  var closeIcon = document.querySelector(".icon.xx");
+  closeIcon.addEventListener("click", function () {
+    var sidebar = document.querySelector(".sidebar");
+    sidebar.classList.remove("visible");
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var toggleButtons = document.querySelectorAll(".xx");
-  toggleButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      var sidebar = document.querySelector(".sidebar");
-      if (sidebar.classList.contains("display")) {
-        sidebar.classList.remove("display");
-      } else {
-        sidebar.classList.add("display-none");
-      }
-    });
-  });
+//hide nav
+window.addEventListener("scroll", function () {
+  var header = document.getElementById("header");
+  var scrollPosition = window.scrollY;
+
+  if (scrollPosition > 0) {
+    header.classList.add("header-scrolled");
+  } else {
+    header.classList.remove("header-scrolled");
+  }
 });
 
 //slide

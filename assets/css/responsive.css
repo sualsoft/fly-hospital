@@ -3,7 +3,8 @@
 --------------------------------------------------------------*/
 
 @media only screen and (max-width: 576px) {
-  .container {
+  .container,
+  .width {
     max-width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -25,9 +26,7 @@
   .header .img {
     width: 200px;
   }
-  .header .top {
-    justify-content: center;
-  }
+
   .hero .input-1 {
     width: 100%;
   }
@@ -95,8 +94,16 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .width {
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .header img {
     width: 200px;
+  }
+  .header .top {
+    justify-content: center;
   }
   .red a {
     background-color: var(--red-color);
@@ -104,9 +111,7 @@
     border-radius: 1000px;
     transition: all 0.3s;
   }
-  .sidebar {
-    width: 100%;
-  }
+
   .header .right {
     justify-content: center !important;
     align-items: center !important;
@@ -115,10 +120,11 @@
     text-align: center;
   }
   .hero h1 {
-    font-size: 32px;
+    font-size: 24px !important;
   }
   .hero h2 {
-    font-size: 24px;
+    font-size: 18px;
+    margin-bottom: 2rem;
   }
   .section-header p {
     font-size: 28px;
@@ -131,7 +137,7 @@
     display: none;
   }
   .hero .text {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   .hero .hero-img img {
     width: 150%;
@@ -165,13 +171,50 @@
   .tiles .wrapper {
     margin: 0px;
   }
+  .dentist .col-3 {
+    width: 90% !important;
+    padding: 1rem;
+  }
+  .top-ten .col-9 {
+    width: 100%;
+  }
+  .sm-d-none {
+    display: none;
+  }
+  .sm-d {
+    display: flex;
+    width: 100%;
+  }
+
+  .list-hero .app-icon ul {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+    margin-top: 2rem;
+  }
+  .top-ten .col-4 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  .list-hero .app-icon ul li img {
+    width: 150px;
+  }
+  .footer img {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 991px) {
+  .width {
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .hero {
     height: auto;
     padding: 200px 0 60px 0;
   }
+
   .contact form .form-control {
     width: 80%;
   }
@@ -190,8 +233,20 @@
   .contact-us form {
     width: 90%;
   }
+  .dentist .col-3 {
+    width: 40%;
+    padding: 1rem;
+  }
+  .faq-section .col-6 {
+    width: 100%;
+  }
 }
 @media (max-width: 1200px) {
+  .width {
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .contact form .form-control {
     width: 85%;
   }
@@ -204,6 +259,14 @@
 }
 
 @media (max-width: 1400px) {
+  .width {
+    max-width: 1320px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .header .navigation .nav-bar {
+    padding: 1rem 2rem;
+  }
 }
 /*--------------------------------------------------------------
 # small Devices
@@ -253,6 +316,9 @@
   .hero form {
     flex-direction: row;
   }
+  .sm-d {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -288,5 +354,21 @@
 @media only screen and (min-width: 1400px) {
   .container {
     max-width: 1320px;
+  }
+  .width-1 {
+    width: 100%;
+  }
+  .width-1 p {
+    text-align: end;
+  }
+  .center {
+    max-width: 1320px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .width {
+    max-width: 1320px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
