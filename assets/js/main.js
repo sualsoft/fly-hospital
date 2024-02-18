@@ -30,70 +30,6 @@ window.addEventListener("scroll", function () {
 //slide
 
 document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".carousel-container");
-  const logos = document.querySelectorAll(".logo");
-  const logoWidth = logos[0].offsetWidth + 10; // including margin-right
-  const logoCount = logos.length;
-  const carouselWidth = logoWidth * logoCount;
-  let currentIndex = 0;
-
-  // Clone the logos to create a seamless loop
-  logos.forEach((logo, index) => {
-    const clone = logo.cloneNode(true);
-    container.appendChild(clone);
-  });
-
-  // Set the width of the container to fit all logos
-  container.style.width = carouselWidth + "px";
-
-  function slide(direction) {
-    if (direction === "next") {
-      currentIndex++;
-    } else {
-      currentIndex--;
-    }
-
-    const offset = -currentIndex * logoWidth;
-    container.style.transform = `translateX(${offset}px)`;
-
-    // Reset index to 0 when reaching the end
-    if (currentIndex >= logoCount) {
-      currentIndex = 0;
-      container.style.transition = "none";
-      container.style.transform = `translateX(0)`;
-      setTimeout(() => {
-        container.style.transition = "";
-      }, 10);
-    }
-
-    // Loop to the last logo when going backwards from the beginning
-    if (currentIndex < 0) {
-      currentIndex = logoCount - 1;
-      const endOffset = -currentIndex * logoWidth;
-      container.style.transition = "none";
-      container.style.transform = `translateX(${-carouselWidth + endOffset}px)`;
-      setTimeout(() => {
-        container.style.transition = "";
-      }, 10);
-    }
-  }
-
-  // Auto slide every 2 seconds
-  setInterval(function () {
-    slide("next");
-  }, 2000);
-
-  // Add event listeners for previous and next buttons
-  document.getElementById("prevBtn").addEventListener("click", function () {
-    slide("prev");
-  });
-
-  document.getElementById("nextBtn").addEventListener("click", function () {
-    slide("next");
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
   const questions = document.querySelectorAll(".question");
   questions.forEach((question) => {
     question.addEventListener("click", function () {
@@ -106,3 +42,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// SLIDE
+var swiper = new Swiper(".mySwiper", {
+  speed: 400,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  slidesPerView: "auto",
+
+  breakpoints: {
+    320: {
+      slidesPerView: 4,
+      spaceBetween: 4,
+    },
+    480: {
+      slidesPerView: 6,
+      spaceBetween: 6,
+    },
+    640: {
+      slidesPerView: 8,
+      spaceBetween: 10,
+    },
+    992: {
+      slidesPerView: 9,
+      spaceBetween: 20,
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+//Modal
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

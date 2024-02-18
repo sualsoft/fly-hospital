@@ -215,6 +215,7 @@ h6 {
 }
 .header img {
   width: 350px;
+  margin-bottom: 18px;
 }
 .header .toggle img {
   width: 30px;
@@ -269,9 +270,7 @@ h6 {
   color: var(--red-color);
   cursor: pointer;
 }
-.header-scrolled .navigation {
-  display: none;
-}
+
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -609,6 +608,10 @@ hero
 /**
 *Top-ten
 **/
+.top-ten h2 {
+  text-align: center;
+  font-size: 32px;
+}
 .top-ten .card-bg {
   background-color: #aee9c5;
 }
@@ -626,7 +629,9 @@ hero
 /**
 *Dentist
 **/
-
+.dentist h2 {
+  font-size: 32px;
+}
 .dentist .box {
   background-color: #f2fff7;
   width: 100%;
@@ -935,6 +940,137 @@ hero
 .tiles .info a:hover {
   background-color: var(--yello-color);
   color: #000;
+}
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+.clients .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.clients .swiper-slide img {
+  opacity: 0.9;
+  transition: 0.3s;
+  filter: grayscale(100);
+}
+.clients .swiper-slide img:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+.swiper-button-prev::after {
+  display: none;
+  position: absolute;
+  right: 0;
+}
+.swiper-button-next::after {
+  display: none;
+}
+.nav-btn {
+  position: relative;
+  width: 42px !important;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px;
+}
+.nav-btn i {
+  font-size: 32px;
+  color: #022a11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide:hover {
+  display: block !important;
+}
+
+/*--------------------------------------------------------------
+# Page Modal
+--------------------------------------------------------------*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.7s !important;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  margin: 60px auto;
+  padding: 30px;
+  width: 60%;
+  min-height: 50vh;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal form input {
+  display: flex;
+  width: 80%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.modal form textarea {
+  width: 90%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.modal form .btn {
+  display: flex;
+  justify-content: center;
+  width: 96%;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
 }
 /*--------------------------------------------------------------
 # Contact pages
