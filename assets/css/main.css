@@ -56,7 +56,6 @@ h6 {
   margin: 0rem 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .red a {
@@ -215,7 +214,6 @@ h6 {
 }
 .header img {
   width: 350px;
-  margin-bottom: 18px;
 }
 .header .toggle img {
   width: 30px;
@@ -988,17 +986,16 @@ hero
 .swiper-button-next::after {
   display: none;
 }
-.nav-btn {
-  position: relative;
-  width: 42px !important;
-  height: 40px;
+
+.nav-btn i {
+  font-size: 24px;
+  color: #022a11;
+  width: 15px;
+  height: 15px;
+  padding: 8px;
   background-color: #ffffff;
   border-radius: 100%;
   box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px;
-}
-.nav-btn i {
-  font-size: 32px;
-  color: #022a11;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -56,19 +56,19 @@ var swiper = new Swiper(".mySwiper", {
   breakpoints: {
     320: {
       slidesPerView: 4,
-      spaceBetween: 4,
+      spaceBetween: 2,
     },
     480: {
       slidesPerView: 6,
-      spaceBetween: 6,
+      spaceBetween: 3,
     },
     640: {
       slidesPerView: 8,
-      spaceBetween: 10,
+      spaceBetween: 5,
     },
     992: {
-      slidesPerView: 9,
-      spaceBetween: 20,
+      slidesPerView: 10,
+      spaceBetween: 0,
     },
   },
   navigation: {
