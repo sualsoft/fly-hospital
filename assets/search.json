@@ -1,0 +1,145 @@
+{
+  "Ciudad_Juarez": {
+    "city_name": "Ciudad Juarez",
+    "services": ["Dental_Implants", "Dentist", "Lasik", "Plastic_Surgery"]
+  },
+  "Mexicali": {
+    "city_name": "Mexicali",
+    "services": [
+      "Dental_Implants",
+      "Dentist",
+      "Hair_Transplant",
+      "Hospital",
+      "IVF",
+      "Lasik",
+      "Mommy_Makeover",
+      "Plastic_Surgery",
+      "Tummy_Tuck"
+    ]
+  },
+  "Los_Algodones": {
+    "city_name": "Los Algodones",
+    "services": ["Dental_Implants", "Dentist"]
+  },
+  "Mexico_City": {
+    "city_name": "Mexico City",
+    "services": [
+      "Dental_Implants",
+      "Dentist",
+      "Gastric_Bypass",
+      "Hair_Transplant",
+      "IVF",
+      "Lasik",
+      "Mommy_Makeover",
+      "Plastic_Surgery",
+      "Rhinoplasty",
+      "Tummy_Tuck"
+    ]
+  },
+  "Monterrey": {
+    "city_name": "Monterrey",
+    "services": [
+      "Dentist",
+      "Hospitals",
+      "Lasik",
+      "Mommy_Makeover",
+      "Plastic_Surgery"
+    ]
+  },
+  "Nogales": {
+    "city_name": "Nogales",
+    "services": ["Dentist"]
+  },
+  "Tijuana": {
+    "city_name": "Tijuana",
+    "services": [
+      "Dental_Implants",
+      "Dentist",
+      "Facelift",
+      "Gastric_Band",
+      "Gastric_Bypass",
+      "Hair_Transplant",
+      "IVF",
+      "Lasik",
+      "Mommy_Makeover",
+      "Plastic_Surgery",
+      "Rhinoplasty",
+      "Sleeve_Gastrectomy",
+      "Tummy_Tuck"
+    ]
+  },
+  "Bangkok": {
+    "city_name": "Bangkok",
+    "services": [
+      "Blepharoplasty",
+      "Body_Lift",
+      "Dental_Implants",
+      "Dentist",
+      "Facelift",
+      "Gastric_Band",
+      "Gastric_Bypass",
+      "Hair_Transplant",
+      "Hospitals",
+      "IVF",
+      "Lasik",
+      "Mommy_Makeover",
+      "Neurology",
+      "Plastic_Surgery",
+      "Rhinoplasty"
+    ]
+  },
+  "Phuket": {
+    "city_name": "Phuket",
+    "services": [
+      "Dental_Implants",
+      "Dentist",
+      "Facelift",
+      "Gastric_Bypass",
+      "Hospitals",
+      "IVF",
+      "Lasik",
+      "Plastic_Surgery",
+      "Rhinoplasty",
+      "Tummy_Tuck"
+    ]
+  },
+  "Pattaya": {
+    "city_name": "Pattaya",
+    "services": [
+      "Dental_Implants",
+      "Dentist",
+      "Lasik",
+      "Plastic_Surgery",
+      "Tummy_Tuck"
+    ]
+  },
+  "Ankara": {
+    "city_name": "Ankara",
+    "services": ["Dentist", "Hospital", "IVF", "Lasik"]
+  },
+  "Antalya": {
+    "city_name": "Antalya",
+    "services": [
+      "Dental_Implants",
+      "Dentist",
+      "Hair_Transplant",
+      "Lasik",
+      "Plastic_Surgery"
+    ]
+  },
+  "Istanbul": {
+    "city_name": "Istanbul",
+    "services": [
+      "Dental_Implants",
+      "Dentist",
+      "Hair_Transplant",
+      "Hospitals",
+      "IVF",
+      "Lasik"
+    ]
+  },
+  "Izmir": {
+    "city_name": "Izmir",
+    "services": ["Dentist", "Hospitals", "Plastic_Surgery"]
+  }
+}

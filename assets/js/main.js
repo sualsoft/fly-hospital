@@ -14,6 +14,58 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebar.classList.remove("visible");
   });
 });
+//Search Box
+
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceInput = document.getElementById("service");
+  const cityInput = document.getElementById("city");
+
+  const searchForm = document.getElementById("searchForm");
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let selectedService = serviceInput.value.toLowerCase(); // Convert to lowercase
+    let selectedCity = cityInput.value.toLowerCase().replace(/\s+/g, "-"); // Convert to lowercase and replace spaces with hyphens
+    if (selectedService && selectedCity) {
+      const baseUrl = window.location.origin;
+      window.location.href = `${baseUrl}/${selectedService}/${selectedCity}`;
+    } else {
+      alert("Please select both a service and a city.");
+    }
+  });
+
+  // Fetch and populate service and city lists from JSON
+  fetch("/assets/search.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const services = new Set();
+      const cities = new Set();
+
+      // Extract services and cities
+      for (const city in data) {
+        data[city].services.forEach((service) =>
+          services.add(service.toLowerCase())
+        ); // Convert service names to lowercase
+        cities.add(data[city].city_name);
+      }
+
+      // Populate service datalist
+      const serviceList = document.getElementById("serviceList");
+      services.forEach((service) => {
+        const option = document.createElement("option");
+        option.value = service;
+        serviceList.appendChild(option);
+      });
+
+      // Populate city datalist
+      const cityList = document.getElementById("cityList");
+      cities.forEach((city) => {
+        const option = document.createElement("option");
+        option.value = city;
+        cityList.appendChild(option);
+      });
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+});
 
 //hide nav
 window.addEventListener("scroll", function () {
