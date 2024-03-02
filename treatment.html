@@ -112,33 +112,42 @@
           </div>
         </div>
         <div class="col-12">
-          <form class="d-flex" action="">
+          <form id="searchForm">
             <!--Icon 1-->
-            <div class="input-1">
-              <i class="bi bi-search search-icon"></i>
-              <input
-                type="text"
-                class="search-input"
-                id="fname"
-                name="fname"
-                placeholder=" What treatment do you need?"
-              />
-            </div>
+            <div class="row">
+              <div class="col-5">
+                <div class="item">
+                  <i class="bi bi-search search-icon"></i>
+                  <input
+                    type="text"
+                    class="search-input"
+                    id="service"
+                    name="service"
+                    placeholder=" What treatment do you need?"
+                  />
+                </div>
+                <ul id="serviceSuggestions" class="list-group"></ul>
+              </div>
 
-            <!--Icon 2-->
-            <div class="input-1">
-              <input
-                type="text"
-                id="lname"
-                class="cross-input"
-                name="lname"
-                placeholder="Where do you want to go?"
-              />
-              <i class="bi bi-crosshair cross-icon"></i>
+              <div class="col-5">
+                <div class="item">
+                  <input
+                    type="text"
+                    id="city"
+                    class="cross-input"
+                    name="city"
+                    placeholder="Where do you want to go?"
+                  />
+                  <i class="bi bi-crosshair cross-icon"></i>
+                </div>
+                <ul id="citySuggestions" class="list-group"></ul>
+              </div>
+              <div class="col-2">
+                <button type="submit" class="form-btn">Search</button>
+              </div>
             </div>
 
             <!--Button-->
-            <button type="submit">Search</button>
           </form>
         </div>
         <div class="col-12">

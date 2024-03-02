@@ -213,6 +213,7 @@ h6 {
   padding: 0rem;
 }
 .header img {
+  margin-top: -50px;
   width: 350px;
 }
 .header .toggle img {
@@ -327,58 +328,6 @@ section {
   width: 100%;
 }
 
-.hero form {
-  gap: 12px;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 1rem;
-}
-
-.hero form input {
-  padding: 1rem 2rem;
-}
-
-.hero .input-1 {
-  position: relative;
-  display: flex;
-  width: 45%;
-}
-
-.hero .search-input {
-  width: 100%;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.hero .search-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  color: var(--main-green-color);
-}
-
-.hero .cross-input {
-  width: 100%;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.hero .cross-icon {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  color: var(--main-green-color);
-}
-
-.hero form button {
-  width: 10%;
-  margin: 0px;
-  padding: 0px;
-}
-
 .hero .app-icon ul {
   list-style: none;
   display: flex;
@@ -389,16 +338,7 @@ section {
 .hero .app-icon ul li img {
   width: 90%;
 }
-.hero form button[type="submit"] {
-  background: var(--yello-color);
-  border: 0;
-  padding: 10px 30px;
-  color: #000;
-  transition: 0.4s;
-  border-radius: 4px;
-  font-size: 18px;
-  cursor: pointer;
-}
+
 .app {
   position: fixed;
   right: -69px;
@@ -420,10 +360,79 @@ section {
   padding: 1rem 1rem;
   background-color: var(--yello-color);
 }
-.hero form button[type="submit"]:hover {
-  background: var(--main-green-color);
+
+/**
+* Treatment Carousel Section
+*/
+#searchForm {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+}
+.item {
+  width: 100%;
+  position: relative;
+}
+.item input {
+  width: 85%;
+  padding: 1rem;
+  border: none;
 }
 
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main-green-color);
+}
+
+.item .search-input {
+  padding-left: 30px;
+}
+
+.cross-icon {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main-green-color);
+}
+
+.item .cross-input {
+  padding-right: 30px;
+}
+
+.form-btn {
+  border: none;
+  background-color: var(--yello-color);
+  width: 100% !important;
+  padding: 1rem;
+  transition: all 0.3s !important;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  background-color: var(--main-green-color) !important;
+}
+
+.list-group {
+  padding: 0px;
+  list-style: none;
+  background-color: #fff;
+  width: 91.5%;
+  padding: 1rem 0rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.list-group li {
+  padding: 1rem 0rem 1rem 0rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.list-group li:last-child {
+  border-bottom: none;
+}
 /**
 * Treatment Carousel Section
 */
@@ -970,13 +979,18 @@ hero
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px;
 }
 
 .swiper-slide img {
   display: block;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .swiper-button-prev::after {
   display: none;
@@ -1143,6 +1157,7 @@ hero
   padding: 8px 10px;
   border-radius: 4px;
 }
+
 /*--------------------------------------------------------------
 # Footer pages
 --------------------------------------------------------------*/

@@ -36,6 +36,7 @@
   .hero form {
     flex-direction: column;
   }
+
   .why .col-4 {
     width: 50% !important;
   }
@@ -204,6 +205,20 @@
   .footer img {
     padding: 1rem;
   }
+  #searchForm .row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #searchForm .col-5 {
+    width: 100%;
+  }
+  #searchForm .col-2 {
+    width: 95%;
+  }
+  .search-icon {
+    left: 20px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -241,6 +256,9 @@
   }
   .faq-section .col-6 {
     width: 100%;
+  }
+  .header img {
+    margin-top: 0px;
   }
 }
 @media (max-width: 1200px) {

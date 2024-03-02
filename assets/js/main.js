@@ -19,49 +19,103 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const serviceInput = document.getElementById("service");
   const cityInput = document.getElementById("city");
+  const serviceSuggestions = document.getElementById("serviceSuggestions");
+  const citySuggestions = document.getElementById("citySuggestions");
 
-  const searchForm = document.getElementById("searchForm");
-  searchForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    let selectedService = serviceInput.value.toLowerCase(); // Convert to lowercase
-    let selectedCity = cityInput.value.toLowerCase().replace(/\s+/g, "-"); // Convert to lowercase and replace spaces with hyphens
-    if (selectedService && selectedCity) {
-      const baseUrl = window.location.origin;
-      window.location.href = `${baseUrl}/${selectedService}/${selectedCity}`;
-    } else {
-      alert("Please select both a service and a city.");
-    }
-  });
+  // Hide suggestion lists by default
+  serviceSuggestions.style.display = "none";
+  citySuggestions.style.display = "none";
 
-  // Fetch and populate service and city lists from JSON
+  // Fetch and populate service and city suggestions from JSON
   fetch("/assets/search.json")
     .then((response) => response.json())
     .then((data) => {
-      const services = new Set();
-      const cities = new Set();
+      const servicesSet = new Set();
+      const citiesSet = new Set();
 
       // Extract services and cities
       for (const city in data) {
         data[city].services.forEach((service) =>
-          services.add(service.toLowerCase())
-        ); // Convert service names to lowercase
-        cities.add(data[city].city_name);
+          servicesSet.add(service.toLowerCase())
+        );
+        citiesSet.add(data[city].city_name.toLowerCase());
       }
 
-      // Populate service datalist
-      const serviceList = document.getElementById("serviceList");
-      services.forEach((service) => {
-        const option = document.createElement("option");
-        option.value = service;
-        serviceList.appendChild(option);
+      const services = Array.from(servicesSet); // Convert set back to array
+      const cities = Array.from(citiesSet); // Convert set back to array
+
+      // Function to filter suggestions based on user input
+      function filterSuggestions(input, suggestions) {
+        const inputValue = input.value.toLowerCase();
+        return suggestions.filter((suggestion) =>
+          suggestion.toLowerCase().startsWith(inputValue)
+        );
+      }
+
+      // Function to populate suggestions list
+      function populateSuggestions(input, suggestionsList, suggestions) {
+        // Clear previous suggestions
+        suggestionsList.innerHTML = "";
+        // Filter suggestions based on user input
+        const filteredSuggestions = filterSuggestions(input, suggestions);
+        // Populate filtered suggestions (up to maximum of 5)
+        if (filteredSuggestions.length === 0) {
+          const listItem = document.createElement("li");
+          listItem.textContent = "No matching";
+          listItem.classList.add("list-group-item");
+          suggestionsList.appendChild(listItem);
+        } else {
+          for (let i = 0; i < Math.min(filteredSuggestions.length, 5); i++) {
+            const listItem = document.createElement("li");
+            listItem.textContent = filteredSuggestions[i];
+            listItem.classList.add("list-group-item");
+            listItem.addEventListener("click", () => {
+              input.value = filteredSuggestions[i];
+              suggestionsList.style.display = "none"; // Hide suggestions after selecting one
+            });
+            suggestionsList.appendChild(listItem);
+          }
+        }
+        // Show suggestions list
+        suggestionsList.style.display = "block";
+      }
+
+      // Event listeners for input fields
+      serviceInput.addEventListener("input", () => {
+        populateSuggestions(serviceInput, serviceSuggestions, services);
       });
 
-      // Populate city datalist
-      const cityList = document.getElementById("cityList");
-      cities.forEach((city) => {
-        const option = document.createElement("option");
-        option.value = city;
-        cityList.appendChild(option);
+      cityInput.addEventListener("input", () => {
+        populateSuggestions(cityInput, citySuggestions, cities);
+      });
+
+      // Hide suggestions list when input is empty
+      serviceInput.addEventListener("input", () => {
+        if (serviceInput.value.trim() === "") {
+          serviceSuggestions.style.display = "none";
+        }
+      });
+
+      cityInput.addEventListener("input", () => {
+        if (cityInput.value.trim() === "") {
+          citySuggestions.style.display = "none";
+        }
+      });
+
+      // Form submission event listener
+      const searchForm = document.getElementById("searchForm");
+      searchForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const selectedService = serviceInput.value.toLowerCase();
+        const selectedCity = cityInput.value.toLowerCase();
+        if (!services.includes(selectedService)) {
+          alert("Error: Service not found.");
+        } else if (!cities.includes(selectedCity)) {
+          alert("Error: City not found.");
+        } else {
+          const baseUrl = window.location.origin;
+          window.location.href = `${baseUrl}/${selectedService}/${selectedCity}`;
+        }
       });
     })
     .catch((error) => console.error("Error fetching data:", error));
@@ -119,7 +173,7 @@ var swiper = new Swiper(".mySwiper", {
       spaceBetween: 5,
     },
     992: {
-      slidesPerView: 10,
+      slidesPerView: 11,
       spaceBetween: 0,
     },
   },
