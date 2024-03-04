@@ -213,10 +213,12 @@ h6 {
   padding: 0rem;
 }
 .header img {
-  margin-top: -50px;
   width: 350px;
+  margin-top: -10px;
+  padding-bottom: 40px;
 }
 .header .toggle img {
+  padding-bottom: 0px;
   width: 30px;
   cursor: pointer;
 }
@@ -392,7 +394,7 @@ section {
 
 .cross-icon {
   position: absolute;
-  right: 30px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--main-green-color);
