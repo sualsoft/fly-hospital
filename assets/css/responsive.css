@@ -281,6 +281,10 @@
   .contact form textarea {
     width: 93%;
   }
+  .swiper-slide img {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 1400px) {
